@@ -5,6 +5,5 @@ start-container:
 build-container:
     docker build -t myimage .
 
-
 stop-container:
     docker stop gblog
