@@ -2,11 +2,14 @@
 start-container:
 	docker run -d --name gblog -p 80:80 myimage
 
-build-container: stop-container clean-container
+build-container: clean-container
 	 docker build -t myimage .
 
 stop-container:
 	docker stop gblog
 
-clean-container:
+clean-container: stop-container
 	docker rm gblog
+
+dev-container:
+	 docker build -t myimage .
